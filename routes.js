@@ -1,6 +1,6 @@
 const ROUTES = [
     {
-        url: '/first',
+        url: '/demo',
         rateLimit: {
             windowMs: 15 * 60 * 1000,
             max: 100
@@ -9,12 +9,12 @@ const ROUTES = [
             target: process.env.API_URL,
             changeOrigin: true,
             pathRewrite: {
-                [`^/first`]: '/demo',
+                [`^/demo`]: '/demo',
             },
         }
     },
     {
-        url: '/health',
+        url: '/actuator/health',
         rateLimit: {
             windowMs: 15 * 60 * 1000,
             max: 100
@@ -23,7 +23,7 @@ const ROUTES = [
             target: process.env.API_URL,
             changeOrigin: true,
             pathRewrite: {
-                [`^/health`]: '/actuator/health',
+                [`^/actuator/health`]: '/actuator/health',
             },
         }
     },

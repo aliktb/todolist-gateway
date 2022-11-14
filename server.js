@@ -15,11 +15,7 @@ setupLogging(app);
 setupRateLimit(app, ROUTES);
 setupProxies(app, ROUTES);
 
-app.get('/hello', (req, resp) => {
-    return resp.send(process.env.API_URL);
-})
-
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Gateway app listening on PORT ${port}`)
 })
